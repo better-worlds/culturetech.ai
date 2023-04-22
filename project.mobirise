@@ -1,6 +1,6 @@
 {
   "settings": {
-    "currentPage": "index-temp.html",
+    "currentPage": "home.html",
     "theme": {
       "name": "artistm5",
       "title": "ArtistM5",
@@ -64,7 +64,7 @@
     "screenshot": "screenshot.png"
   },
   "pages": {
-    "index-temp.html": {
+    "home.html": {
       "settings": {
         "main": true,
         "title": "Home - Culture Tech",
