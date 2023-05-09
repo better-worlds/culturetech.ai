@@ -1,5 +1,5 @@
 name: directory-listing
-on: 
+on: [push]
 
 jobs:
   pages-directory-listing:
