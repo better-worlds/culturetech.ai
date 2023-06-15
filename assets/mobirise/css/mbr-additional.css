@@ -1669,6 +1669,83 @@ a {
 .cid-tCgegsWGRV .card-box p {
   color: #353535;
 }
+.cid-tHhF37whXA {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  background-color: #ffffff;
+}
+.cid-tHhF37whXA .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-tHhF37whXA .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-tHhF37whXA .link-align {
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .cid-tHhF37whXA .text-wrapper {
+    text-align: center;
+  }
+}
+@media (min-width: 992px) {
+  .cid-tHhF37whXA .text-wrapper {
+    padding: 0 2rem;
+  }
+}
+.cid-tHhF37whXA .link-wrap {
+  width: fit-content;
+  display: inline-block;
+  overflow: hidden;
+}
+.cid-tHhF37whXA .link-wrap:hover svg {
+  animation-duration: 1s;
+  animation-name: svg;
+}
+.cid-tHhF37whXA svg {
+  transition: all 0.3s;
+  width: 100%;
+  margin-top: -20px;
+}
+.cid-tHhF37whXA g {
+  fill: #40b0bf;
+}
+@keyframes svg {
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+  }
+  51% {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+.cid-tHhF37whXA .row {
+  align-items: center;
+}
+@media (max-width: 991px) {
+  .cid-tHhF37whXA .image-wrapper {
+    padding: 1rem;
+  }
+}
+.cid-tHhF37whXA .mbr-section-title {
+  color: #353535;
+  text-align: left;
+}
+.cid-tHhF37whXA .mbr-text,
+.cid-tHhF37whXA .mbr-section-btn {
+  color: #353535;
+}
 .cid-tCgcIhRxmo {
   padding-top: 4rem;
   padding-bottom: 4rem;
