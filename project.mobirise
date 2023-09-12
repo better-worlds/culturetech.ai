@@ -1,6 +1,6 @@
 {
   "settings": {
-    "currentPage": "index.html",
+    "currentPage": "2023.html",
     "theme": {
       "name": "artistm5",
       "title": "ArtistM5",
@@ -61,7 +61,7 @@
     "siteUrl": false,
     "cookiesAlert": false,
     "gdpr": false,
-    "uniqCompNum": 91,
+    "uniqCompNum": 97,
     "versionPublish": "5.9.0",
     "screenshot": "screenshot.png"
   },
@@ -3505,10 +3505,13 @@
           "_anchor": "header02-2e"
         },
         {
-          "alias": false,
+          "_name": "afeatures1",
+          "_sourceTheme": "cookm5",
           "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
             "& when (@bg-type = 'image')": {
               "background-image": "url(@bg-value)"
             },
@@ -3530,15 +3533,128 @@
                 "background-image": "url(@fallBackImage)"
               }
             },
-            ".item": {
-              "margin-bottom": "3rem"
+            "display": "flex",
+            "align-items": "center",
+            ".row": {
+              "justify-content": "flex-start"
+            },
+            ".mbr-text": {
+              "color": "#1F1D1A",
+              "margin-bottom": "30px"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "text-align": "left",
+              "color": "#000000"
             }
           },
-          "_name": "features01",
-          "_sourceTheme": "offerm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"offerm5 features1\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\">\n    <mbr-parameters>\n\n\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"7\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"4\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Main Title\" name=\"showMainTitle\" checked>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"range\" inline title=\"Items\" name=\"items\" min=\"1\" max=\"10\" step=\"1\" value=\"10\" condition=\"showTitle || showText\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/offerm5/components/_images/background4.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/offerm5/components/_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#fafafa\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class mbr-class=\"{'container' : !fullWidth, 'container-fluid' : fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-lg-12 col-md-12 col-sm-12\">\n                <h3 class=\"mbr-section-maintitle mbr-fonts-style pb-5 align-left\" mbr-theme-style=\"display-5\" mbr-if=\"showMainTitle\" data-app-selector=\".mbr-section-maintitle\"><b>Finalists / ART</b></h3>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 0\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">ATB.Unit</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Lorem ipsum dolor sit amet adipisicing elit.</p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 1\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Sarah Ortegon</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nullam eget consectetur justo, sit amet efficitur dui.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 2\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Dan Li</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Maecenas non porttitor quam, a rutrum arcu.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 3\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Wang Zhuoqui, Du Qingxi</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Vestibulum urna quam, cursus at consectetur faucibus arcu.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 4\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\"><b>Idonaba Zealous (WINNER)</b></h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Maecenas congue vel metus ac accumsan.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 5\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Yilipan Aikeaber</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nulla elementum fermentum metus vel aliquam.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 6\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Ji Linguan</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Donec feugiat ac nisi eleifend semper.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 7\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Youjiu Culture</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nunc est enim, rhoncus vitae tellus id, ornare gravida sem.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 8\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Orange orange, Cheng Jingyao</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nunc est enim, rhoncus vitae tellus id, ornare gravida sem.\n                </p>\n            </div>\n           <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 9\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Zhou Zixuan</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nunc est enim, rhoncus vitae tellus id, ornare gravida sem.\n                </p>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "tPB0FsDBmd",
-          "_anchor": "features01-2h",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features1\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n\n        <input type=\"range\" inline name=\"textWidth\" title=\"Width\" min=\"4\" max=\"12\" value=\"10\" step=\"1\">\n        <select title=\"Align\" name=\"contentAlign\">\n            <option value selected>Left</option>\n            <option value=\"justify-content-center\">Center</option>\n            <option value=\"justify-content-end\">Right</option>\n        </select>\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1-3.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#f5f4ed\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@PROJECT_PATH@/assets/images/background1-3.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#FEF9EE\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row {{contentAlign}}\">\n            <div class=\"col-12 col-lg-{{textWidth}}\">\n                <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-text, .mbr-section-btn\"><b>\n                    ART</b></p>\n                <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Interested in joining the collective?</p>\n                <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn align-center\" mbr-if=\"showButtons\"><a class=\"btn btn-success-outline\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Learn More</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_JSplaceholders": [],
+          "_PHPplaceholders": [],
+          "_anchor": "afeatures1-2j",
+          "_isUserblock": true,
+          "_cid": "tPE9rwMQ3E",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".link-align": {
+              "width": "100%"
+            },
+            ".text-wrapper": {
+              "@media (max-width: 767px)": {
+                "text-align": "center"
+              },
+              "@media (min-width: 992px)": {
+                "padding": "0 2rem"
+              }
+            },
+            "& when (@reverseContent)": {
+              ".row": {
+                "flex-direction": "row-reverse"
+              }
+            },
+            ".link-wrap": {
+              "width": "fit-content",
+              "display": "inline-block",
+              "overflow": "hidden",
+              "&:hover": {
+                "svg": {
+                  "animation-duration": "1s",
+                  "animation-name": "svg"
+                }
+              }
+            },
+            "svg": {
+              "transition": "all 0.3s",
+              "width": "100%",
+              "margin-top": "-20px"
+            },
+            "g": {
+              "fill": "@primaryColor"
+            },
+            "@keyframes svg": {
+              "0%": {
+                "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
+              },
+              "50%": {
+                "clip-path": "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)"
+              },
+              "51%": {
+                "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)"
+              },
+              "100%": {
+                "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
+              }
+            },
+            ".row": {
+              "align-items": "center"
+            },
+            ".image-wrapper": {
+              "@media (max-width: 991px)": {
+                "padding": "1rem"
+              }
+            },
+            "figcaption": {
+              "background-color": "black",
+              "color": "white",
+              "padding": "4px",
+              "text-align": "center"
+            }
+          },
+          "_name": "features04",
+          "_sourceTheme": "artistm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"artistm5 features4\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline name=\"imageWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Link\" name=\"showButtons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#f5f4ed\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n\n            <div class=\"col-12 col-md-12 col-lg\">\n                <div class=\"text-wrapper\">\n                    <h1 class=\"mbr-section-title mbr-fonts-style mb-3\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>ART / Winner</b></h1>\n                    <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Idonaba Zealous, Nigeria<br><br><b>Artist Statement</b><br>I was born in Nigeria. I mm an artist specialised in pencil drawing, digital artworks and animation. Drawing is my passion so it doesn't matter what medium I use; my works are highly detailed and I have a very active imagination for my illustrations, so I tend to capture emotions in my works. I am a professional artist and my works span a variety of mediums, but I am best known for pencil drawing. my job In my digital artwork, \"my father's land,\" I use the faces inside the Nigerian map to represent my country and its culture. I also enjoyed fiddling with the background to highlight the beauty of my nation and its people.<br><br>Our way of life is a digital college I made with free image's (No copyright). The artwork exhibit Nigeria culture as a mother breastfeeding her child which illustrate how we survive and lived by our culture.<br><br>The details of the collage images are different aspact of the Nigerian culture eg our food, artifact, dressing and music etc We live and survive by this way of life just like a baby and breastfeeding no<br> </p>\n\n                    <div class=\"link-align\" mbr-if=\"showButtons\">\n                        <div class=\"link-wrap\">\n                            <p class=\"mbr-link mbr-fonts-style p-0 m-0\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-link, .link-align\"><b>\n                                    VIEW MORE</b></p>\n\n                           \n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"col-12 col-md-12 col-lg-{{imageWidth}} image-wrapper\">\n                <figure>\n                <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/screenshot-2023-09-12-at-06.00.31-867x906.jpg\" alt=\"Our Way Of Life - Idonaba Zealous\">\n                    <figcaption>Title: Our Way Of Life</figcaption>\n                </figure>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "tPEcjw6v63",
+          "_anchor": "features04-2l",
           "_PHPplaceholders": [],
           "_JSplaceholders": [],
           "_protectedParams": [],
@@ -3578,7 +3694,154 @@
           },
           "_name": "features01",
           "_sourceTheme": "offerm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"offerm5 features1\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\">\n    <mbr-parameters>\n\n\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"7\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"4\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Main Title\" name=\"showMainTitle\" checked>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"range\" inline title=\"Items\" name=\"items\" min=\"1\" max=\"10\" step=\"1\" value=\"10\" condition=\"showTitle || showText\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background4.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@PROJECT_PATH@/assets/images/background1-2.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#fafafa\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class mbr-class=\"{'container' : !fullWidth, 'container-fluid' : fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-lg-12 col-md-12 col-sm-12\">\n                <h3 class=\"mbr-section-maintitle mbr-fonts-style pb-5 align-left\" mbr-theme-style=\"display-5\" mbr-if=\"showMainTitle\" data-app-selector=\".mbr-section-maintitle\"><b>Finalists / MUSIC</b></h3>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 0\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\"><b>ArtsDAO Yuan Orchestra (WINNER)</b></h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Lorem ipsum dolor sit amet adipisicing elit.</p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 1\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Liu Chen</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nullam eget consectetur justo, sit amet efficitur dui.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 2\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Cai muqi Cais</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Maecenas non porttitor quam, a rutrum arcu.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 3\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Wang Neijing</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Vestibulum urna quam, cursus at consectetur faucibus arcu.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 4\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Chai Haoyuan / Inspirata</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Maecenas congue vel metus ac accumsan.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 5\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Yao Rui &amp; There is Light in August</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nulla elementum fermentum metus vel aliquam.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 6\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\"><b>Duan Wei (WINNER)</b></h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Donec feugiat ac nisi eleifend semper.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 7\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Ys Yisi</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nunc est enim, rhoncus vitae tellus id, ornare gravida sem.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 8\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Garuba Isa Green</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nunc est enim, rhoncus vitae tellus id, ornare gravida sem.\n                </p>\n            </div>\n           <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 9\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Zhang Xiopin</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nunc est enim, rhoncus vitae tellus id, ornare gravida sem.\n                </p>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"offerm5 features1\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\">\n    <mbr-parameters>\n\n\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"4\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Main Title\" name=\"showMainTitle\" checked>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"range\" inline title=\"Items\" name=\"items\" min=\"1\" max=\"10\" step=\"1\" value=\"10\" condition=\"showTitle || showText\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/offerm5/components/_images/background4.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#f5f4ed\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/offerm5/components/_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#fafafa\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class mbr-class=\"{'container' : !fullWidth, 'container-fluid' : fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-lg-12 col-md-12 col-sm-12\">\n                <h3 class=\"mbr-section-maintitle mbr-fonts-style pb-5 align-left\" mbr-theme-style=\"display-5\" mbr-if=\"showMainTitle\" data-app-selector=\".mbr-section-maintitle\"><b>ART / Finalists</b></h3>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 0\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">ATB.Unit</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Lorem ipsum dolor sit amet adipisicing elit.</p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 1\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Wang Zhuoqui, Du Qingxi</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nullam eget consectetur justo, sit amet efficitur dui.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 2\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Dan Li</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Maecenas non porttitor quam, a rutrum arcu.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 3\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Yilipan Aikeaber</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Vestibulum urna quam, cursus at consectetur faucibus arcu.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 4\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Ji Linguan</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Maecenas congue vel metus ac accumsan.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 5\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Youjiu Culture</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nulla elementum fermentum metus vel aliquam.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 6\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Orange orange, Cheng Jingyao</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Donec feugiat ac nisi eleifend semper.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 7\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Zhou Zixuan</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nunc est enim, rhoncus vitae tellus id, ornare gravida sem.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 8\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Sarah Ortegon</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nunc est enim, rhoncus vitae tellus id, ornare gravida sem.\n                </p>\n            </div>\n           <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 9\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">&nbsp;</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nunc est enim, rhoncus vitae tellus id, ornare gravida sem.\n                </p>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "tPB0FsDBmd",
+          "_anchor": "features01-2h",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "_name": "afeatures1",
+          "_sourceTheme": "cookm5",
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            "display": "flex",
+            "align-items": "center",
+            ".row": {
+              "justify-content": "flex-start"
+            },
+            ".mbr-text": {
+              "color": "#1F1D1A",
+              "margin-bottom": "30px"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "text-align": "left",
+              "color": "#000000"
+            }
+          },
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features1\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n\n        <input type=\"range\" inline name=\"textWidth\" title=\"Width\" min=\"4\" max=\"12\" value=\"10\" step=\"1\">\n        <select title=\"Align\" name=\"contentAlign\">\n            <option value selected>Left</option>\n            <option value=\"justify-content-center\">Center</option>\n            <option value=\"justify-content-end\">Right</option>\n        </select>\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1-3.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#f5f4ed\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@PROJECT_PATH@/assets/images/background1-3.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#FEF9EE\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row {{contentAlign}}\">\n            <div class=\"col-12 col-lg-{{textWidth}}\">\n                <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-text, .mbr-section-btn\"><b>\n                    MUSIC</b></p>\n                <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Interested in joining the collective?</p>\n                <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn align-center\" mbr-if=\"showButtons\"><a class=\"btn btn-success-outline\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Learn More</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_JSplaceholders": [],
+          "_PHPplaceholders": [],
+          "_anchor": "afeatures1-2k",
+          "_isUserblock": true,
+          "_cid": "tPEa3dxQXZ",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "background-color": "@bgColor",
+            "& when (@reverseContent)": {
+              ".row": {
+                "flex-direction": "row-reverse"
+              }
+            },
+            ".mbr-text": {
+              "text-align": "left"
+            }
+          },
+          "_name": "content02",
+          "_sourceTheme": "artistm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"artistm5 content2\" group=\"Content\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"checkbox\" name=\"reverseContent\" title=\"Reverse\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"4\" max=\"8\" value=\"4\" step=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n        <header>Background</header>\n        <input type=\"color\" title=\"Color\" name=\"bgColor\" value=\"#f5f4ed\">\n    </mbr-parameters>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-md\">\n                <h5 class=\"mbr-section-title mbr-fonts-style mb-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\"><b>ArtsDAO Yuan Orchestra, China (WINNER)</b></h5>\n                <h6 class=\"mbr-section-subtitle mbr-fonts-style mb-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-7\">Ruge is produced by ArtsDAO Yuan Orchestra, with lyrics/composition/singing: Lv Ying; arranger/producer: Zhang Fan; drummer: Zhang Chi. <br><br>This is an affectionate song, which penetrates the bass of life, touches the soul, and brings people calmness and sentiment. Artsdao Yuan Orchestra is a professional band with creative strength and excellent resources, and it is also the first NFT original band in China. <br><br>Lv Ying: Director, screenwriter and independent artist; The first batch of pioneer experimental musicians in China, the founder of \"Shaanxi Opera Rock\". <br><br>Zhang Fan: Excellent modern music arranger and producer, the godfather of the enlightenment in Xi 'an music industry. <br><br>Zhang Chi: A professional drummer and an independent musician.<br><br><b>Submission Statement</b><br><i>Life is like a song, a wordless song, When the song ends and people disperse, what is left? Time is like a song, a silent song, When the song ends and people disperse, only this song remains. Who is singing this song, who is singing in the dark, Who forgot this song, letting the soul fill with loneliness. Sing a soulful song, permeating the color of the night, Time silently passes through, only leaving this song. This ancient song, in sync with joys and sorrows, Singing the song of life, singing the song that belongs to oneself, Time silently passes through, leaving this song behind.</i></h6>\n            </div>\n            <div class=\"col-md-12 col-lg-{{textWidth}}\">\n                <p class=\"mbr-text mbr-fonts-style\" data-app-selector=\".mbr-text\" mbr-theme-style=\"display-7\"><b>TITLE:</b> Ruge</p>\n                \n                <figure>\n  <audio controls src=\"assets/audio/artsdao.mp3\">\n    <a href=\"/\"> Download audio </a>\n  </audio>\n</figure>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "tPEeBGVCCR",
+          "_anchor": "content02-2o",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "background-color": "@bgColor",
+            "& when (@reverseContent)": {
+              ".row": {
+                "flex-direction": "row-reverse"
+              }
+            }
+          },
+          "_name": "content02",
+          "_sourceTheme": "artistm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"artistm5 content2\" group=\"Content\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"checkbox\" name=\"reverseContent\" title=\"Reverse\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"4\" max=\"8\" value=\"4\" step=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n        <header>Background</header>\n        <input type=\"color\" title=\"Color\" name=\"bgColor\" value=\"#f5f4ed\">\n    </mbr-parameters>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-md\">\n                <h5 class=\"mbr-section-title mbr-fonts-style mb-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\"><b>Duan Wie, China (WINNER)</b></h5>\n                <h6 class=\"mbr-section-subtitle mbr-fonts-style mb-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-7\"><b>Submission Statement</b><br><i>To the south of Yunnan, there lives an ancient and mysterious branch of the Yi people, Nisu, where there are many beautiful flower-waist girls, who are ingenious and good at singing and dancing. One of them is Shuiluoyisha …</i><div><i><br></i></div><div><i>In front of the tiled house where the smoke curled up, Isa danced in a colorful pleated skirt. Although I didn't understand her language, her pure and tactful voice seemed to make people deeply intoxicated with ancient magic. The ancient and simple note of \"Ceroni Sai\" contained the memories of Yi people from generation to generation and echoed melodiously in the valleys and forests …</i></div><div><i><br></i></div><div><i>At that time, when I was young, I had never seen such a delicate face or such clear eyes. Isa's ethereal voice and graceful dance were unforgettable for life, and her sweet smile also made people forget the worldly worries, so I wrote this song \"Isami Language\", in which there are some sweet words I want to say to you …</i><br><br><b>Translation</b><br>Free people<div><span style=\"font-size: 1.6rem;\">Free souls</span><br></div><div><span style=\"font-size: 1.6rem;\">Kind people</span><br></div><div><span style=\"font-size: 1.6rem;\">Kind souls</span><br></div><div><span style=\"font-size: 1.6rem;\">Only you can light up my heart</span><br></div><div><span style=\"font-size: 1.6rem;\">(Only you can ignite my passion)</span><br></div><div><span style=\"font-size: 1.6rem;\">Only you can stop me from wandering</span><br></div><div><span style=\"font-size: 1.6rem;\">(Only you can let me see hope)</span><br></div><div><span style=\"font-size: 1.6rem;\">Sai-lo-li-sai Say love to say</span><br></div><div><span style=\"font-size: 1.6rem;\">Sai-lo-li-sai Say love to say</span><br></div><div><span style=\"font-size: 1.6rem;\">Sad people</span><br></div><div><span style=\"font-size: 1.6rem;\">Will no longer be sad</span><br></div><div><span style=\"font-size: 1.6rem;\">Wandering people</span><br></div><div><span style=\"font-size: 1.6rem;\">Will no longer wander</span><br></div><div><span style=\"font-size: 1.6rem;\">You use a clear fragrance</span><br></div><div><span style=\"font-size: 1.6rem;\">To soothe the scars in my heart</span></div><div>You use the heritage of Bimo</div><div>To guide my confused soul</div><div>Sai-lo-li-sai Say love to say</div><div>Sai-lo-li-sai Say love to say</div><div>Sai-lo-li-sai Say love to say</div><div>Sai-lo-li-sai Say love to say</div><div>Beautiful girl</div><div>Please accompany my life</div><div>Beautiful girl</div><div>I leave my youth for you</div><div>Beautiful girl</div><div>Please accompany my life</div><div>Beautiful girl</div><div>I leave my youth for you</div></div></h6>\n            </div>\n            <div class=\"col-md-12 col-lg-{{textWidth}}\">\n                <p class=\"mbr-text mbr-fonts-style\" data-app-selector=\".mbr-text\" mbr-theme-style=\"display-7\">\n                    <b>Title:</b>&nbsp;Yi sha mi Yu<br></p>\n                   <figure>\n  <audio controls src=\"assets/audio/duanwie.mp3\">\n    <a href=\"/\"> Download audio </a>\n  </audio>\n</figure>\n            </div>\n            \n        </div>\n    </div>\n</section>",
+          "_cid": "tPEeAU6LYN",
+          "_anchor": "content02-2n",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".item": {
+              "margin-bottom": "3rem"
+            }
+          },
+          "_name": "features01",
+          "_sourceTheme": "offerm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"offerm5 features1\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\">\n    <mbr-parameters>\n\n\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"4\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Main Title\" name=\"showMainTitle\" checked>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"range\" inline title=\"Items\" name=\"items\" min=\"1\" max=\"10\" step=\"1\" value=\"8\" condition=\"showTitle || showText\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background4.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#f5f4ed\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@PROJECT_PATH@/assets/images/background1-2.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#fafafa\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class mbr-class=\"{'container' : !fullWidth, 'container-fluid' : fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-lg-12 col-md-12 col-sm-12\">\n                <h3 class=\"mbr-section-maintitle mbr-fonts-style pb-5 align-left\" mbr-theme-style=\"display-5\" mbr-if=\"showMainTitle\" data-app-selector=\".mbr-section-maintitle\"><b>MUSIC / Finalists</b><br></h3>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 0\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Cai muqi Cais</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Lorem ipsum dolor sit amet adipisicing elit.</p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 1\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Wang Neijing</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nullam eget consectetur justo, sit amet efficitur dui.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 2\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Chai Haoyuan / Inspirata</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Maecenas non porttitor quam, a rutrum arcu.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 3\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Yao Rui &amp; There is Light in August</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Vestibulum urna quam, cursus at consectetur faucibus arcu.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 4\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Garuba Isa Green</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Maecenas congue vel metus ac accumsan.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 5\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Ys Yisi</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nulla elementum fermentum metus vel aliquam.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 6\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Liu Chen</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Donec feugiat ac nisi eleifend semper.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 7\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Zhang Xiaopin</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nunc est enim, rhoncus vitae tellus id, ornare gravida sem.\n                </p>\n            </div>\n            <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 8\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\"></h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nunc est enim, rhoncus vitae tellus id, ornare gravida sem.\n                </p>\n            </div>\n           <div class=\"item col-sm-12 col-md-6\" mbr-if=\"items > 9\">\n                <h3 class=\"mbr-section-title mbr-semibold mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Zhang Xiopin</h3>\n                <p class=\"mbr-text mbr-fonts-style align-left mbr-py-1\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Nunc est enim, rhoncus vitae tellus id, ornare gravida sem.\n                </p>\n            </div>\n        </div>\n    </div>\n</section>",
           "_JSplaceholders": [],
           "_PHPplaceholders": [],
           "_anchor": "features01-2i",
